@@ -1,0 +1,150 @@
+.interview-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  z-index: 5;
+
+  @media (max-width: $mobile) {
+    transform: translateX(15px);
+    max-width: 170px;
+    bottom: -65px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 5px;
+    position: relative;
+    z-index: 5;
+
+    &>span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      background-color: white;
+      box-shadow: 0 0 29px 0 rgba(79, 47, 126, 0.51);
+      color: #d4c8e6;
+      position: relative;
+      flex-shrink: 0;
+      animation: apearing 0.5s ease-in-out;
+
+      @media(max-width: $mobile) {
+        width: 50px;
+        height: 50px;
+
+        svg {
+          scale: 0.6;
+        }
+      }
+    }
+
+    &:nth-child(1) {
+      padding-left: 50px;
+
+      @media (max-width: $mobile) {
+        padding: 0;
+      }
+    }
+
+    &:nth-child(2) {
+      transform: translateX(90px);
+      max-width: 350px;
+
+      @media (max-width: $mobile) {
+        transform: translateX(25px);
+      }
+    }
+
+    &:nth-child(3) {
+      transform: translateX(65px);
+      max-width: 410px;
+
+      @media (max-width: $mobile) {
+        transform: translateX(20px);
+      }
+    }
+
+    &:nth-child(4) {
+      padding-left: 15px;
+
+      @media (max-width: $mobile) {
+        padding: 0;
+      }
+    }
+
+    &:nth-child(5) {
+      transform: translate(-120px, -40px);
+      align-items: flex-end;
+
+      &>div {
+        transform: translate(7px, 0px);
+      }
+
+      @media (max-width: $mobile) {
+        transform: translate(-60px, -15px);
+
+        &>div {
+          transform: translate(-1px, 15px);
+        }
+      }
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    line-height: 24px;
+    max-width: 300px;
+    position: relative;
+    animation: apearing-right 0.25s ease-in-out;
+    color: #a28ac6;
+
+    img {
+      position: absolute;
+      top: -13px;
+      left: -29px;
+      z-index: 10;
+      width: 76px;
+
+      @media (max-width: $mobile) {
+        width: 39px;
+        height: 27px;
+        top: -7px;
+        left: -12px;
+      }
+    }
+
+    span {
+      font-weight: 900;
+      color: white;
+      position: relative;
+      z-index: 20;
+      animation: apearing 1.5s ease-in-out;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 13px;
+      line-height: 13px;
+
+    }
+  }
+
+  &::before {
+    content: url('../../img/pink-arrow.png');
+    display: block;
+    position: absolute;
+    top: -15%;
+    right: 70%;
+    animation: apearing 0.5s ease-in-out;
+
+    @media (max-width: $mobile) {
+      content: url('../../img/pink-arrow-mobile.png');
+      top: -5%
+    }
+  }
+}

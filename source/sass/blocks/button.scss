@@ -1,0 +1,44 @@
+.button {
+  display: inline-block;
+  padding: 30px 48px;
+  background-color: #ff5ca1;
+  font-size: 22px;
+  font-family: $ff-roboto;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 35px 20px -20px rgba(81, 6, 36, 0.3);
+  border-radius: 50px;
+  border: none;
+  text-align: center;
+
+
+  cursor: pointer;
+
+  @media (max-width: $mobile) {
+    font-size: 20px;
+    width: 100%;
+  }
+
+  &:hover {
+    color: #ff5ca1;
+    background-color: white;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &--purple {
+    background-color: #8d58b7;
+    box-shadow: 0 35px 20px -20px rgba(81, 6, 36, 0.3);
+    padding: 20px 40px;
+    width: 100%;
+    font-size: 24px;
+
+    @media (max-width: $mobile) {
+      font-size: 20px;
+    }
+
+    &:hover {
+      color: #8d58b7;
+    }
+  }
+}

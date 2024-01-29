@@ -1,0 +1,93 @@
+.tabs {
+  &__list {
+    display: none;
+
+    @media (max-width: 1100px) {
+      grid-column: 1/-1;
+      grid-row: 1/-1;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 215px;
+      transform: rotate(-26deg);
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: $mobile) {
+      transform: rotate(-20deg);
+      column-gap: 35px;
+      place-self: center end;
+      height: 100%;
+      margin-right: 20px;
+    }
+
+    li {
+      transform: rotate(26deg);
+
+      @media (max-width: $mobile) {
+        transform: rotate(20deg);
+      }
+    }
+
+    li:nth-child(2n) {
+      place-self: end start;
+
+      @media (max-width: $mobile) {
+        grid-column:  1 / 2;
+        place-self: start end;
+      }
+    }
+
+    li:nth-child(2n+1) {
+      place-self: center end;
+
+      @media (max-width: $mobile) {
+        grid-column:  2 / 3;
+         place-self: center start;
+      }
+    }
+  }
+
+  &__button {
+    width: 26px;
+    height: 26px;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0px 9px 14px 0px rgba(0, 0, 0, 0.35);
+    position: relative;
+    z-index: 2;
+
+    animation: 0.5s pulse ease-in infinite;
+
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 2px;
+      background-color: #faa9cb;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+      transition: all 0.5s ease-in;
+    }
+
+    &.active {
+      animation: none;
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(720deg);
+        transition: all 0.5s ease-in;
+      }
+    }
+  }
+}

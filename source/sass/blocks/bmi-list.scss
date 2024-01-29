@@ -1,0 +1,68 @@
+.bmi-list {
+  &__item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    @media (max-width: $mobile) {
+      gap: 0;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 300px;
+    height: 300px;
+
+    img {
+      position: relative;
+      z-index: 1;
+      top: 49%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::before {
+      content: url('../../img/bmi-photo-underlay-2.png');
+      left: 55%;
+    }
+
+    &::after {
+      content: url('../../img/bmi-photo-underlay-1.png');
+      z-index: 1;
+    }
+
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 26px;
+    text-transform: uppercase;
+
+    @media (max-width: $mobile) {
+      font-size: 17px;
+      line-height: 22px;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+
+    @media (max-width: $mobile) {
+      font-size: 17px;
+      line-height: 22px;
+    }
+  }
+}

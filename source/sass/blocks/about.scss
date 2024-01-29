@@ -1,0 +1,100 @@
+.about {
+  background: url('../../img/about-bg.png') no-repeat 50% 20% / cover;
+  padding: 325px 0;
+  padding-bottom: 150px;
+  margin-top: -160px;
+
+  @media (max-width: $mobile) {
+    background-image: url('../../img/about-bg-mobile.png');
+    padding: 90px 0;
+    padding-bottom: 150px;
+    margin: 0;
+  }
+
+  &__container {
+    padding: 0 15px;
+
+    h2 {
+      font-size: 44px;
+      line-height: 70px;
+      font-family: $ff-playfair;
+      font-style: italic;
+      text-align: center;
+      text-shadow: -4px 1px 8px #fff, 4px -1px 4px #fff;
+
+      @media (max-width: $mobile) {
+        font-size: 26px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 50px;
+
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      row-gap: 30px;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-rows: 270px 1fr;
+    min-height: 400px;
+    position: relative;
+
+    @media (max-width: $mobile) {
+      min-height: auto;
+      width: 100%;
+      grid-template-rows: auto;
+
+      &:last-child {
+        img {
+          transform: translateX(-30px);
+        }
+      }
+    }
+
+    img {
+      place-self: center;
+    }
+
+    p {
+      place-self: start center;
+      text-align: center;
+      font-size: 20px;
+      line-height: 24px;
+      max-width: 280px;
+
+      @media (max-width: $mobile) {
+        font-size: 17px;
+        line-height: 20px;
+        max-width: 290px;
+      }
+    }
+
+    &:not(:last-child)::after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 40px;
+      background: url('../../img/slider-arrow.png') no-repeat center / contain;
+      position: absolute;
+      right: -20px;
+      top: 40%;
+      animation: sail-right 3s infinite;
+
+      @media (max-width: $mobile) {
+        top: auto;
+        bottom: -32px;
+        right: 50%;
+        transform: rotate(90deg);
+        animation: sail-down 3s infinite;
+      }
+    }
+  }
+}

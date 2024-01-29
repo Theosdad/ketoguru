@@ -1,0 +1,126 @@
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-25px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrow-bounce {
+  0% {
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    transform: translate(-50%, -15px);
+  }
+
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes arrow-debounce {
+  0% {
+    transform: rotate(180deg) translate(15px, 15px);
+  }
+
+  50% {
+    transform: rotate(180deg) translate(15px, 0);
+  }
+
+  100% {
+    transform: rotate(180deg) translate(15px, 15px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    scale: 1.1;
+  }
+
+  25% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 0.9;
+  }
+
+  75% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.1;
+  }
+}
+
+@keyframes apearing {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes apearing-left {
+  0% {
+    transform: translateX(-100vw);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes apearing-right {
+  0% {
+    transform: translateX(100vw);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes sail-right {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(10px, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(40px, 0);
+  }
+}
+
+@keyframes sail-down {
+  0% {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: rotate(90deg) translate(10px, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(90deg) translate(40px, 0);
+  }
+}

@@ -1,0 +1,218 @@
+.order {
+  background: url('../../img/order-bg.png') no-repeat 50% 0 / cover;
+  padding: 165px 0;
+  padding-bottom: 40px;
+  margin-top: -180px;
+
+  @media (max-width: $mobile) {
+    background-image: url('../../img/order-bg-mobile.png');
+    padding: 0;
+    padding-bottom: 40px;
+    margin-top: -145px;
+  }
+
+  &__container {
+    display: flex;
+    padding: 70px 15px;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (max-width: $mobile) {
+      align-items: normal;
+      position: relative;
+      padding-bottom: 500px;
+    }
+  }
+
+  &__heading {
+    color: white;
+    max-width: 320px;
+
+    h2 {
+      font-size: 72px;
+      line-height: 70px;
+      font-family: $ff-playfair;
+      font-style: italic;
+      margin-bottom: 90px;
+      text-shadow: 0.5px 0.866px 2px rgba(0, 0, 0, 0.28);
+
+      @media (max-width: $mobile) {
+        text-align: right;
+        font-size: 41px;
+        line-height: 43px;
+        max-width: 260px;
+        margin-bottom: 20px;
+      }
+    }
+
+    h3 {
+      font-size: 40px;
+      line-height: 41px;
+      font-weight: 400;
+
+      @media (max-width: 1000px) {
+        display: none;
+      }
+    }
+  }
+
+  &__picture {
+    position: relative;
+    align-self: self-end;
+
+    @media (max-width:1000px) {
+      align-self: auto;
+    }
+  }
+
+  &__product {
+    height: 592px;
+
+    @media(max-width: $mobile) {
+      max-width: 140px;
+      height: auto;
+      transform: translateX(-15px);
+    }
+  }
+
+  &__balerina {
+    position: absolute;
+    bottom: -10%;
+    left: 25%;
+    max-width: none;
+    z-index: 5;
+    pointer-events: none;
+
+    @media (max-width: 1000px) {
+      left: -135%
+    }
+
+    @media (max-width: $mobile) {
+      max-width: 350px;
+      left: 1%;
+      bottom: -32%;
+    }
+  }
+
+  &__form {
+    background: url('../../img/form-bg.png') no-repeat 50% 0;
+    background-size: 100% 100%;
+    align-self: flex-end;
+    padding-top: 70px;
+    padding-left: 25px;
+    padding-bottom: 50px;
+    padding-right: 120px;
+    margin-left: auto;
+    transform: translateX(100px);
+    flex-shrink: 0;
+
+    @media (max-width: 1000px) {
+      margin: 0;
+      transform: none;
+      align-self: auto;
+    }
+
+    @media (max-width: $mobile) {
+      position: absolute;
+      padding: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 470px;
+      height: 490px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 10px;
+      max-width: 320px;
+
+      &>div {
+        width: 100%;
+        position: relative;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 1px;
+          height: 30px;
+          background-color: gray;
+          position: absolute;
+          right: 35px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          width: 7px;
+          height: 7px;
+          border: 2px solid black;
+          border-top: none;
+          border-left: none;
+          transform: rotate(45deg) translateY(-50%);
+          position: absolute;
+          right: 20px;
+          top: 50%;
+        }
+      }
+
+      @media (max-width: $mobile) {
+        transform: translate(0, 10px);
+      }
+    }
+
+    h3 {
+      font-size: 28px;
+      line-height: 23px;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  }
+
+  &__input {
+    padding: 20px 35px;
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    width: 100%;
+    color: black;
+    font-size: 16px;
+
+    &::placeholder {
+      color: black;
+    }
+
+    &:focus {
+      outline: 2px solid #ff5ca1;
+
+      &::placeholder {
+        color: #ff5ca1;
+      }
+    }
+  }
+
+  &__button {
+    padding: 24px 12px;
+    font-size: 20px;
+    width: 100%;
+  }
+}

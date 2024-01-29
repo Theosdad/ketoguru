@@ -1,0 +1,117 @@
+.sports-list {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 280px;
+
+  @media (max-width: $mobile) {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    gap: 15px;
+    min-width: auto;
+    max-width: 150px;
+  }
+
+  &__item {
+    font-size: 20px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+      font-size: 16px;
+      line-height: 17px;
+    }
+
+    &.header {
+      padding: 10px;
+      background: linear-gradient(233deg, transparent 0 9%, #ce0202 10% 100%);
+      position: relative;
+      width: 348px;
+      word-wrap: break-word;
+      transform: translateX(9px);
+
+      @media (max-width: $mobile) {
+        width: 150px;
+        padding: 5px 10px;
+        padding-right: 20px;
+        background: linear-gradient(to left, transparent 0, #ce0202 50% 100%);
+        transform: translateX(25px);
+      }
+
+      h3 {
+        font-weight: 700;
+        text-transform: uppercase;
+        color: white;
+
+        @media (max-width: $mobile) {
+          font-size: 17px;
+          line-height: 18px;
+          text-align: center;
+          transform: translateX(-20px);
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: calc(100% + 20px);
+        top: -10px;
+        left: -50px;
+        background: linear-gradient(to right bottom, transparent 48%, #ce0202 50%) center top / 100% 50% no-repeat,
+          linear-gradient(to right top, transparent 48%, #ce0202 50%) center bottom / 100% 50% no-repeat;
+
+        @media (max-width: $mobile) {
+          width: 20px;
+          left: -20px;
+        }
+      }
+    }
+
+    &.common {
+      flex-direction: row-reverse;
+      gap: 15px;
+      word-break: break-word;
+
+      svg {
+        flex-shrink: 0;
+
+        @media (max-width: $mobile) {
+          scale: 0.75;
+        }
+      }
+
+      span {
+        color: #e13834;
+        font-weight: 700;
+      }
+
+      br {
+        display: none;
+      }
+
+      @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 5px;
+        text-align: center;
+
+        br {
+          display: block;
+        }
+
+        &:nth-child(4) {
+          order: 1;
+        }
+
+        &:nth-child(3) {
+          order: 2;
+          transform: translateX(-2px);
+        }
+      }
+    }
+  }
+}

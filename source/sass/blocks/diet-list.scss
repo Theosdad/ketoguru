@@ -1,0 +1,126 @@
+.diet-list {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-width: 250px;
+
+  @media (max-width: $mobile) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    gap: 15px;
+    min-width: auto;
+    max-width: 150px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      display: block;
+      height: calc(100% - 60px);
+    }
+
+    &::before {
+      content: '';
+      right: -4px;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent 0 5%, rgba(59, 65, 69, 0.29) 20% 80%, transparent 95% 100%);
+      z-index: 1;
+    }
+
+    &::after {
+      right: -5px;
+      width: 2px;
+      background: linear-gradient(to bottom, transparent 0 5%, white 20% 80%, transparent 95% 100%);
+    }
+  }
+
+  &__item {
+    font-size: 20px;
+    line-height: 26px;
+
+    @media (max-width: $mobile) {
+      font-size: 16px;
+      line-height: 17px;
+    }
+
+    &.header {
+      display: flex;
+      padding: 10px;
+      background: linear-gradient(100deg, transparent 0 4%, #ce0202 5% 100%);
+      position: relative;
+      width: 260px;
+      transform: translateX(-57px);
+      z-index: 2;
+
+      @media (max-width: $mobile) {
+        width: 160px;
+        padding: 5px;
+        padding-left: 20px;
+        background: linear-gradient(to right, transparent 0, #ce0202 50% 100%);
+        transform: translateX(-35px);
+      }
+
+      h3 {
+        font-weight: 700;
+        text-transform: uppercase;
+        color: white;
+        margin-left: auto;
+
+        @media (max-width: $mobile) {
+          font-size: 17px;
+          line-height: 18px;
+          text-align: center;
+          transform: translateX(20px);
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: calc(100% + 20px);
+        top: -10px;
+        right: -50px;
+        background: linear-gradient(to left bottom, transparent 48%, #ce0202 50%) center top / 100% 50% no-repeat,
+          linear-gradient(to left top, transparent 48%, #ce0202 50%) center bottom / 100% 50% no-repeat;
+        z-index: -1;
+
+        @media (max-width: $mobile) {
+          width: 20px;
+          right: -20px;
+        }
+      }
+    }
+
+    &.common {
+      text-align: right;
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+      gap: 15px;
+
+      svg {
+        place-self: center;
+
+        @media (max-width: $mobile) {
+          scale: 0.75;
+        }
+      }
+
+      span {
+        color: #e13834;
+        font-weight: 700;
+      }
+
+      @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 5px;
+        text-align: center;
+      }
+    }
+  }
+}
